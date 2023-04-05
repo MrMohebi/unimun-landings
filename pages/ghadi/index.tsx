@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import Head from "next/head";
+import Carousel from "@/components/ghadi/Carousel/Carousel";
 
 const Ghadi = () => {
     return (
@@ -11,23 +12,26 @@ const Ghadi = () => {
                       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className={'w-full h-full inset-0 bg-ghadi-bg'}>
-                <main className={'w-full h-full'}>
-                    <section className={'main flex flex-col justify-start items-start w-full h-full overflow-hidden'}>
-                        <div className={'send-photo flex flex-col justify-start items-start  w-full pr-5 '}>
+            <div className={"w-full h-full inset-0 bg-ghadi-bg"}>
+                <main className={"w-full h-full"}>
+                    <section className={"main flex flex-col justify-start items-start w-full h-full overflow-hidden"}>
+                        <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5 "}>
                             <h3 style={{
-                                fontSize: '9vw'
-                            }} className={' mt-5  whitespace-nowrap text-white w-full '}>یـــــــــه
-                                عـــــــکـــــــــســــــــ قـــــدیـــــــــــــ</h3>
+                                fontSize: "9vw",
+                            }} className={" mt-5 font whitespace-nowrap text-white w-full k-black"}>یـــــــــه عـــــــکـــــــــســــــــ قـــــدیـــــــــــــــــــــــ</h3>
                             <h3 style={{
-                                fontSize: '9vw'
-                            }} className={' whitespace-nowrap text-white w-full '}>از کـتابـت بــرامـون
+                                fontSize: "9vw"
+                            }} className={" whitespace-nowrap text-white w-full k-medium "}>از کـتابـت بــرامـون
                                 بــفرســــــــــــــــ</h3>
+
                         </div>
+                        <div className={'h-20'}></div>
+                        <Carousel/>
+
                     </section>
 
                     <div
-                        className=' hidden abstract ghadi-masked w-full h-full  bottom-0 left-0 bg-white/60 backdrop-blur fixed lg:block'/>
+                        className=" hidden abstract ghadi-masked w-full h-full  bottom-0 left-0 bg-white/60 backdrop-blur fixed lg:block"/>
                 </main>
             </div>
         </>

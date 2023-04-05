@@ -1,43 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/woff2/KalamehWeb-Thin.woff2") format("woff2"), url("fonts/woff/KalamehWeb-Thin.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 200;
+  src: url("fonts/woff2/KalamehWeb-ExtraLight.woff2") format("woff2"), url("fonts/woff/KalamehWeb-ExtraLight.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/woff2/KalamehWeb-Light.woff2") format("woff2"), url("fonts/woff/KalamehWeb-Light.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/woff2/KalamehWeb-Medium.woff2") format("woff2"), url("fonts/woff/KalamehWeb-Medium.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/woff2/KalamehWeb-Semibold.woff2") format("woff2"), url("fonts/woff/KalamehWeb-Semibold.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 800;
+  src: url("fonts/woff2/KalamehWeb-ExtraBold.woff2") format("woff2"), url("fonts/woff/KalamehWeb-ExtraBold.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/woff2/KalamehWeb-Black.woff2") format("woff2"), url("fonts/woff/KalamehWeb-Black.woff") format("woff");
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/woff2/KalamehWeb-Bold.woff2") format("woff2"), url("fonts/woff/KalamehWeb-Bold.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: KalamehWeb;
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/woff2/KalamehWeb-Regular.woff2") format("woff2"), url("fonts/woff/KalamehWeb-Regular.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+.k-black {
+  font-family: KalamehWeb;
+  font-weight: 900;
+}
 
+.k-bold {
+  font-family: KalamehWeb;
+  font-weight: bold;
+}
+
+.k-medium {
+  font-family: KalamehWeb;
+  font-weight: normal;
+}
+
+.k-regular {
+  font-family: KalamehWeb;
+  font-weight: lighter;
+}
 
 html,
 #__next,
 body {
-    direction: rtl;
-    height: 100%;
-    width: 100%;
-    max-width: 100vw;
-
-}
-
-@font-face {
-    font-family: 'KB';
-    src: url('/fonts/Kalameh/KalamehWeb-Bold.woff') format('truetype');
-}
-
-@font-face {
-    font-family: 'KM';
-    src: url('/fonts/Kalameh/KalamehWeb-Medium.woff') format('truetype');
-}
-
-@font-face {
-    font-family: 'K';
-    src: url('/fonts/Kalameh/KalamehWeb-Regular.woff') format('truetype');
-}
-
-@font-face {
-    font-family: 'KT';
-    src: url('/fonts/Kalameh/KalamehWeb-Thin.woff') format('truetype');
+  direction: rtl;
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .ghadi-masked {
-    mask-image: url("/assets/ghadi/mask.svg");
-    mask-size: cover;
-    mask-repeat: no-repeat;
-    mask-position: bottom;
+  mask-image: url("/assets/ghadi/mask.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
 }
 
-
+/*# sourceMappingURL=globals.css.map */
