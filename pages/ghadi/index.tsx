@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Carousel from "@/components/ghadi/Carousel/Carousel";
+import Chat from "@/components/ghadi/Chat/Chat";
 
 const Ghadi = () => {
     return (
@@ -12,7 +13,7 @@ const Ghadi = () => {
                       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className={"w-full h-full inset-0 bg-ghadi-bg"}>
+            <div className={"w-full inset-0 bg-ghadi-bg"}>
                 <main className={"w-full h-full"}>
                     <section className={"main flex flex-col justify-start items-start w-full h-full overflow-hidden"}>
                         <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5 "}>
@@ -28,6 +29,7 @@ const Ghadi = () => {
                         </div>
                         <div className={"h-20"}></div>
                         <Carousel/>
+                        <Chat/>
 
                     </section>
 

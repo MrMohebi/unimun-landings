@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import gsap from "gsap";
 import {Power4} from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import Notif from "@/components/ghadi/notif/Notif";
+import Notif from "@/components/ghadi/Notif/Notif";
 
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -145,6 +145,7 @@ const Carousel = () => {
                 {/*}}>test*/}
                 {/*</button>*/}
             </div>
+            <div className={'w-full bg-transparent pointer-events-none min-h-[19rem] '}></div>
 
         </>
     );
