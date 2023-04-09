@@ -15,15 +15,13 @@ const Ghadi = () => {
             </Head>
             <div className={"w-full inset-0 bg-ghadi-bg"}>
                 <main className={"w-full h-full"}>
-                    <section className={"main flex flex-col justify-start items-start w-full h-full overflow-hidden"}>
-                        <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5 "}>
+                    <section className={"main flex flex-col justify-start items-start w-full  overflow-hidden lg:flex-row"}>
+                        <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5  lg:w-auto"}>
                             <h3 style={{
-                                fontSize: "9vw",
-                            }} className={" mt-5 font whitespace-nowrap text-white w-full k-black"}>یـــــــــه
+                            }} className={" mt-5 font whitespace-nowrap text-white w-full k-black text-[9vw] lg:text-[5vw]"}>یـــــــــه
                                 عـــــــکـــــــــســــــــ قـــــدیـــــــــــــــــــــــ</h3>
                             <h3 style={{
-                                fontSize: "9vw"
-                            }} className={" whitespace-nowrap text-white w-full k-medium "}>از کـتابـت بــرامـون
+                            }} className={" whitespace-nowrap text-white w-full k-medium text-[9vw] lg:text-[5vw] "}>از کـتابـت بــرامـون
                                 بــفرســــــــــــــــ</h3>
 
                         </div>

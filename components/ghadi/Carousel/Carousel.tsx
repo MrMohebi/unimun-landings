@@ -26,7 +26,18 @@ const Carousel = () => {
     }
 
 
-    const scrollToItem = (id: string) => {
+    const lastBookCaptured = useRef("");
+    const scrollToItem = (input: string) => {
+        let id = input;
+        if (!lastBookCaptured.current)
+            lastBookCaptured.current = (id);
+
+        if (id === lastBookCaptured.current) {
+            id = "book-" + (parseInt(lastBookCaptured.current.split("-")[1]) + 1);
+            lastBookCaptured.current = (id);
+        }
+
+        console.log(lastBookCaptured.current);
 
         console.log(document.querySelector(id));
         gsap.to(document.querySelector(id), {
@@ -39,7 +50,7 @@ const Carousel = () => {
 
             gsap.to(scroller.current, {
                 scrollTo: {
-                    offsetX: (window.innerWidth / 2) - itemWidth / 2,
+                    offsetX: (carolRef.current?.getBoundingClientRect().width / 2) - itemWidth / 2,
                     x: id
                 },
                 ease: Power4.easeOut,
@@ -76,11 +87,12 @@ const Carousel = () => {
             itemsXPositions.push(
                 {
                     el: div,
-                    x: (div as HTMLDivElement).getBoundingClientRect().x
+                    x: (phoneImage.current as HTMLDivElement).getBoundingClientRect().x + ((phoneImage.current as HTMLDivElement).getBoundingClientRect().width / 2)
                 }
             );
         });
-        scrollToItem("#book-" + (parseInt((findCenterDiv(window.innerWidth / 2, itemsXPositions).el.id as string).split("-")[1]) + 1));
+        console.log("div width:" + carolRef.current?.getBoundingClientRect().width);
+        scrollToItem("#book-" + (parseInt((findCenterDiv(carolRef.current?.getBoundingClientRect().width / 2, itemsXPositions).el.id as string).split("-")[1]) + 1));
     };
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -90,7 +102,7 @@ const Carousel = () => {
 
         scroller.current?.childNodes.forEach((div, index) => {
 
-            if ((div as HTMLDivElement).getBoundingClientRect().x > window.innerWidth / 2) {
+            if ((div as HTMLDivElement).getBoundingClientRect().x > carolRef.current?.getBoundingClientRect().width / 2) {
                 (div as HTMLDivElement).style.setProperty("opacity", "1");
             } else {
                 lastHiddenCardIndex.current = index;
@@ -98,7 +110,6 @@ const Carousel = () => {
             }
 
         });
-        console.log("#book-" + (lastHiddenCardIndex.current + 1));
         gsap.to("#book-" + (lastHiddenCardIndex.current + 1), {
             opacity: "0",
             duration: "0",
@@ -112,9 +123,11 @@ const Carousel = () => {
     }, []);
 
     const scroller = useRef<HTMLDivElement | null>(null);
+    const carolRef = useRef<HTMLDivElement>();
+    const phoneImage = useRef<HTMLImageElement | null>(null);
     return (
         <>
-            <div dir={"ltr"} className={"relative w-full"}>
+            <div dir={"ltr"} className={"relative w-full lg:fixed lg:bottom-64 lg:w-1/2  "} ref={carolRef}>
 
                 <div
                     className={"flex flex-row justify-start items-center gap-3  w-full overflow-scroll relative"}
@@ -138,14 +151,14 @@ const Carousel = () => {
                 <Notif/>
                 <img src="/ghadi/images/phone.png"
                      className={"absolute  bottom-[-7.2rem] -translate-x-1/2 left-1/2 scale-[3] h-full z-20"}
-                     alt=""/>
+                     alt="" ref={phoneImage}/>
                 {/*<button className={"z-50 bg-white p-10"} onClick={() => {*/}
                 {/*    next();*/}
                 {/*    console.log("next");*/}
                 {/*}}>test*/}
                 {/*</button>*/}
             </div>
-            <div className={'w-full bg-transparent pointer-events-none min-h-[19rem] '}></div>
+            <div className={"w-full bg-transparent pointer-events-none min-h-[19rem]"}></div>
 
         </>
     );

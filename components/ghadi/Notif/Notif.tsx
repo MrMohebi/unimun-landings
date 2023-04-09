@@ -20,8 +20,8 @@ const Notif = () => {
             <img src="/ghadi/images/amir.png" className={"w-8 h-8 rounded-xl object-cover "} alt=""/>
 
             <div className={"flex ml-1 flex-col justify-start items-start h-full py-2"}>
-                <span className={"text-[0.6rem]"}>Amir</span>
-                <span className={"font-light text-[0.6rem]"}>{message}</span>
+                <span className={"text-[0.6rem] IranSansMedium"}>Amir</span>
+                <span className={"font-light text-[0.6rem] IranSans"}>{message}</span>
             </div>
         </div>
     );
