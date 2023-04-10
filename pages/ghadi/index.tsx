@@ -13,19 +13,20 @@ const Ghadi = () => {
                       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <div className={"w-full inset-0 bg-ghadi-bg"}>
+            <div className={"w-full inset-0 bg-ghadi-bg lg:h-full"}>
                 <main className={"w-full h-full"}>
-                    <section className={"main flex flex-col justify-start items-start w-full  overflow-hidden lg:flex-row"}>
-                        <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5  lg:w-auto"}>
-                            <h3 style={{
-                            }} className={" mt-5 font whitespace-nowrap text-white w-full k-black text-[9vw] lg:text-[5vw]"}>یـــــــــه
+                    <section
+                        className={"main flex flex-col justify-start items-start w-full  overflow-hidden lg:flex-row lg:h-full"}>
+                        <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5 lg:w-1/2"}>
+                            <h3 style={{}}
+                                className={" mt-5 font whitespace-nowrap text-white w-full k-black text-[9vw] lg:text-[5vw]"}>یـــــــــه
                                 عـــــــکـــــــــســــــــ قـــــدیـــــــــــــــــــــــ</h3>
-                            <h3 style={{
-                            }} className={" whitespace-nowrap text-white w-full k-medium text-[9vw] lg:text-[5vw] "}>از کـتابـت بــرامـون
+                            <h3 style={{}}
+                                className={" whitespace-nowrap text-white w-full k-medium text-[9vw] lg:text-[5vw] "}>از
+                                کـتابـت بــرامـون
                                 بــفرســــــــــــــــ</h3>
 
                         </div>
-                        <div className={"h-20"}></div>
                         <Carousel/>
                         <Chat/>
 

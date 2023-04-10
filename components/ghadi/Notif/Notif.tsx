@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 
 const Notif = () => {
     const [showNotif, setShowNotif] = useState(false);
-    const messages = ["befrest aksa ro dige", "shab kojaii?", "kdoom ketab?", "too unimun bood","vpn chi dari?",'ketaba manm bzan','khoshet oomade?'];
+    const messages = ["befrest aksa ro dige", "shab kojaii?", "kdoom ketab?", "too unimun bood", "vpn chi dari?", "ketaba manm bzan", "khoshet oomade?"];
     useEffect(() => {
         setMessage(messages[Math.floor(Math.random() * messages.length)]);
         setTimeout(() => {

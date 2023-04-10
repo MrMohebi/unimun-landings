@@ -58,9 +58,9 @@ const Chat = () => {
     }, []);
     return (
 
-        <div className={" w-full h-full shrink-0 grid place-items-center -mt-2 z-30 lg:place-items-start lg:mt-10"}>
+        <div className={" w-full h-full shrink-0 flex flex-col justify-center items-start -mt-2 z-30 lg:h-full lg:place-items-start lg:w-1/2"}>
             <div
-                className={"rounded-[3rem] w-11/12 max-w-lg  bg-white/80 backdrop-blur relative overflow-hidden pb-10 lg:h-full"}>
+                className={"rounded-[3rem] w-11/12 max-w-lg mx-auto bg-white/80 backdrop-blur relative overflow-hidden pb-10 lg:h-2/3"}>
                 <div className={"w-full bg-white/70 h-20 flex flex-row items-center justify-start px-3 "}>
                     <img src="/ghadi/images/unimun.png" alt="Unimun" className={"rounded-full w-16 h-16"}/>
                     <div className={"flex flex-col justify-center items-start h-full mr-3 "}>
