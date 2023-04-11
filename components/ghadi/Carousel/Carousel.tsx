@@ -31,58 +31,68 @@ const Carousel = () => {
     const scrollToItem = (input: string) => {
         let id = input;
 
-
         let itemWidth = 0;
 
-        itemWidth = document.querySelector("#book-2").getBoundingClientRect().width;
+        itemWidth = document.querySelector("#book-2")!.getBoundingClientRect().width;
 
         let currentId = parseInt(id.split("-")[1]);
 
+        gsap.to(id,{
+            opacity:1
+        })
         if (currentId > 20) {
 
-
-
-            gsap.to(scroller.current, {
-                scrollTo: {
-                    offsetX: (carolRef.current?.getBoundingClientRect().width / 2) - itemWidth / 2,
-                    x: "#book-17"
-                },
-                duration: 0,
-
-            });
-
-            gsap.to("#book-18 > img", {
+            gsap.to(["#book-18 > img", "#book-19 > img", "#book-20 > img", "#book-21 > img", "#book-22 > img"], {
                 minHeight: "11rem",
-                duration: 0,
+                duration: 0.00001,
+                onComplete: () => {
+
+
+                    gsap.to(scroller.current, {
+                        scrollTo: {
+                            offsetX: (carolRef.current!.getBoundingClientRect().width / 2) - itemWidth / 2,
+                            x: "#book-17"
+                        },
+                        duration: 0,
+                        onComplete: () => {
+                            next()
+
+
+                            // gsap.to("#book-19 > img", {
+                            //     minHeight: "11rem",
+                            //     duration: 0,
+                            // });
+                            // gsap.to("#book-20 > img", {
+                            //     minHeight: "11rem",
+                            //     duration: 0,
+                            // });
+                            //
+                            // gsap.to("#book-21 > img", {
+                            //     minHeight: "11rem",
+                            //     duration: 0,
+                            // });
+                            // gsap.to("#book-22 > img", {
+                            //     minHeight: "11rem",
+                            //     duration: 0,
+                            // });
+
+                        }
+
+                    });
+                }
             });
 
-            gsap.to("#book-19 > img", {
-                minHeight: "11rem",
-                duration: 0,
-            });
-
-
-            // gsap.to("#book-21 > img", {
-            //     minHeight: "11rem",
-            //     duration: 0,
-            // });
-            // gsap.to("#book-22 > img", {
-            //     minHeight: "11rem",
-            //     duration: 0,
-            // });
-
-            gsap.to("#book-20 > img", {
-                minHeight: "11rem",
-                duration: 0,
-            });
-            // next()
             return
+
+            // next()
+
         }
+
         try {
 
             gsap.to(scroller.current, {
                 scrollTo: {
-                    offsetX: (carolRef.current?.getBoundingClientRect().width / 2) - itemWidth / 2,
+                    offsetX: (carolRef.current!.getBoundingClientRect().width / 2) - itemWidth / 2,
                     x: id
                 },
                 ease: Power4.easeOut,
@@ -124,7 +134,7 @@ const Carousel = () => {
                 }
             );
         });
-        scrollToItem("#book-" + (parseInt((findCenterDiv(phone.current?.getBoundingClientRect().x + phone.current?.getBoundingClientRect().width / 2, itemsXPositions).el.id as string).split("-")[1]) + 1));
+        scrollToItem("#book-" + (parseInt((findCenterDiv(phone.current!.getBoundingClientRect().x + phone.current!.getBoundingClientRect().width / 2, itemsXPositions).el.id as string).split("-")[1]) + 1));
     };
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -134,7 +144,7 @@ const Carousel = () => {
 
         scroller.current?.childNodes.forEach((div, index) => {
 
-            if ((div as HTMLDivElement).getBoundingClientRect().x > carolRef.current?.getBoundingClientRect().width / 2) {
+            if ((div as HTMLDivElement).getBoundingClientRect().x > carolRef.current!.getBoundingClientRect().width / 2) {
                 (div as HTMLDivElement).style.setProperty("opacity", "1");
             } else {
                 lastHiddenCardIndex.current = index;
@@ -173,8 +183,10 @@ const Carousel = () => {
     }, []);
     return (
         <>
-            <div dir={"ltr"} className={"relative w-full lg:fixed lg:bottom-64 lg:w-full lg:translate-x-32 mt-20 "}
+            <div dir={"ltr"}
+                 className={"relative w-full lg:fixed lg:bottom-64 lg:w-full lg:translate-x-32 mt-20 scale-100 "}
                  ref={carolRef}>
+                <div className={' hidden z-10 bg-gradient-to-r from-ghadi-bg to-transparent w-48 h-full top-0 left-0 absolute lg:block'}></div>
 
                 <div
                     className={"flex flex-row justify-start items-center gap-3  w-full overflow-scroll relative"}
@@ -200,7 +212,7 @@ const Carousel = () => {
                     }
                 </div>
                 <div style={{opacity: "0"}}
-                     className={"phone-flash w-[11rem] h-[15rem] absolute bg-white left-1/2 -translate-x-1/2 -top-3 "}></div>
+                     className={"phone-flash w-[11rem] h-[15rem] absolute bg-white left-1/2 -translate-x-1/2 -top-3 z-10 "}></div>
 
                 <Notif/>
                 <img src="/ghadi/images/phone.png"

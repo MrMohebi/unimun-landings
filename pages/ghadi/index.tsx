@@ -33,7 +33,7 @@ const Ghadi = () => {
                     </section>
 
                     <div
-                        className=" hidden abstract ghadi-masked w-full h-full  bottom-0 left-0 bg-white/60 backdrop-blur fixed lg:block"/>
+                        className=" hidden abstract ghadi-masked w-full h-full  -bottom-20 left-0 bg-white/60 backdrop-blur fixed lg:block"/>
                 </main>
             </div>
         </>

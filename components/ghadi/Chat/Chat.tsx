@@ -63,7 +63,7 @@ const Chat = () => {
     };
 
 
-    const [imageFile, setImageFile] = useState(null);
+    const [imageFile, setImageFile] = useState(null as any);
     const imgRef = useRef<HTMLImageElement | null>(null);
     const [uniTyping, setUniTyping] = useState(false);
     const [priceSection, setPriceSection] = useState(false);
@@ -176,7 +176,8 @@ const Chat = () => {
                                             fr.onload = function () {
                                                 setImageFile(fr.result);
                                             };
-                                            fr.readAsDataURL(e.currentTarget.files[0]);
+                                            if (e.currentTarget.files)
+                                                fr.readAsDataURL(e.currentTarget.files[0]);
                                             setTimeout(() => {
                                                 setUniTyping(true);
 
@@ -263,7 +264,7 @@ const Chat = () => {
                                         className={" w-full h-16 bg-white grid grid-cols-12 place-items-center px-4  left-0 bottom-0 pointer-events-auto"}>
                                 <ButtonBase onClick={() => {
                                     console.log(priceInputRef.current?.value);
-                                    setPrice(priceInputRef.current?.value);
+                                    setPrice(priceInputRef.current?.value||'');
 
                                     setPriceTextInput(false);
                                     setUniTyping(true);
