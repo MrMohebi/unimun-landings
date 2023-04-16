@@ -136,9 +136,7 @@ const Carousel = () => {
         });
         scrollToItem("#book-" + (parseInt((findCenterDiv(phone.current!.getBoundingClientRect().x + phone.current!.getBoundingClientRect().width / 2, itemsXPositions).el.id as string).split("-")[1]) + 1));
     };
-    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const timer = useRef();
     const lastHiddenCardIndex = useRef(0);
     useEffect(() => {
 

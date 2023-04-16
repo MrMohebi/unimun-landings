@@ -110,6 +110,7 @@ body {
 
 
 .ghadi-masked {
+  //noinspection CssUnknownTarget
   mask-image: url("/assets/ghadi/mask.svg");
   mask-size: cover;
   mask-repeat: no-repeat;
