@@ -27,7 +27,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: ./Dockerfile.npm
+          context: .
+          file: ./Dockerfile.npm
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-npm-prod:latest    
