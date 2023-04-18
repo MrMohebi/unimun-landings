@@ -17,18 +17,19 @@ const Ghadi = () => {
                 <main className={"w-full h-full"}>
                     <section
                         className={"main flex flex-col justify-start items-start w-full  overflow-hidden lg:flex-row lg:h-full"}>
+                        <img src={'/ghadi/images/ghadi.svg'} className={'w-full'}/>
                         <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5 lg:w-1/2"}>
-                            <h3 style={{}}
-                                className={" mt-5 font whitespace-nowrap text-white w-full k-black text-[9vw] lg:text-[5vw]"}>یـــــــــه
-                                عـــــــکـــــــــســــــــ قـــــدیـــــــــــــــــــــــ</h3>
-                            <h3 style={{}}
-                                className={" whitespace-nowrap text-white w-full k-medium text-[9vw] lg:text-[5vw] "}>از
-                                کـتابـت بــرامـون
-                                بــفرســــــــــــــــ</h3>
+
+                            {/*<h3 style={{}}*/}
+                            {/*    className={" mt-5 font whitespace-nowrap text-white w-full k-black text-[9vw] lg:text-[5vw]"}>یـــــــــه*/}
+                            {/*    عـــــــکـــــــــســــــــ قـــــدیـــــــــــــــــــــــ</h3>*/}
+                            {/*<h3 style={{}}*/}
+                            {/*    className={" whitespace-nowrap text-white w-full k-medium text-[9vw] lg:text-[5vw] "}>از*/}
+                            {/*    کـتابـت بــرامـون*/}
+                            {/*    بــفرســــــــــــــــ</h3>*/}
 
                         </div>
-                        <Carousel/>
-                        <Chat/>
+                        <Carousel/>                        <Chat/>
 
                     </section>
 
