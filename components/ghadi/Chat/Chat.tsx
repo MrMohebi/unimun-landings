@@ -3,7 +3,6 @@ import {motion} from "framer-motion";
 import {ButtonBase} from "@mui/material";
 
 const Chat = () => {
-
     useEffect(() => {
         let dropzone = document.getElementById("dropzone") ?? document.createElement("div");
 
