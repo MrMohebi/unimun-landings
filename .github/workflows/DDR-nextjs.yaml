@@ -40,12 +40,12 @@ jobs:
           method: 'GET'
           
           
-  prod-deploy:
+  prod-build:
     if: contains(github.event.head_commit.message, 'prod-deploy')
     runs-on: ubuntu-22.04
     env:
       TAGGED_IMAGE: "${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-prod:${{ github.run_id }}"
-    name: 'prod deploy'
+    name: 'prod build'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -68,7 +68,16 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-prod:latest   
             ${{ env.TAGGED_IMAGE }}
-            
+
+
+  prod-deploy:
+    needs: prod-build
+    if: contains(github.event.head_commit.message, 'prod-deploy')
+    runs-on: ubuntu-22.04
+    env:
+      TAGGED_IMAGE: "${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-prod:${{ github.run_id }}"
+    name: 'prod deploy'
+    steps:
       - name: update stack with new image
         uses: fifsky/ssh-action@master
         with:
