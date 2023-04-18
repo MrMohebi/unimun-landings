@@ -43,6 +43,8 @@ jobs:
   prod-deploy:
     if: contains(github.event.head_commit.message, 'prod-deploy')
     runs-on: ubuntu-22.04
+    env:
+      TAGGED_IMAGE: "${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-prod:${{ github.run_id }}"
     name: 'prod deploy'
     steps:
       - name: Checkout
@@ -65,15 +67,14 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-prod:latest   
-            ${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-prod:${{ github.run_id }}  
+            ${{ env.TAGGED_IMAGE }}
             
-#       - name: remove previous files
-#         uses: fifsky/ssh-action@master
-#         with:
-#           command: |
-#             cd ${{env.FRONT_DEPLOY_PATH}}
-#             rm -rf ..?* .[!.]* *
-#           host: ${{ secrets.SSH_HOST }}
-#           user: ${{ secrets.SSH_USER }}
-#           key: ${{ secrets.SSH_PRIVATE_KEY}}
+      - name: remove previous files
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            docker service update --force --with-registry-auth prod_unimun_next-landings --image ${{ env.TAGGED_IMAGE }}
+          host: ${{ secrets.SSH_HOST }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY}}
            
