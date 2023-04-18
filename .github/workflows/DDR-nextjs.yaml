@@ -59,7 +59,7 @@ jobs:
           registry: ${{ secrets.DOCKERHUB_REGISTRY }}
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      - name: Build and push
+      - name: Build and push image
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -69,7 +69,7 @@ jobs:
             ${{ secrets.DOCKERHUB_REGISTRY }}/unimun/unimun-landings-prod:latest   
             ${{ env.TAGGED_IMAGE }}
             
-      - name: remove previous files
+      - name: update stack with new image
         uses: fifsky/ssh-action@master
         with:
           command: |
