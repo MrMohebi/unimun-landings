@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import {Inter} from 'next/font/google'
 
 
 export default function Home() {
-  return (
-    <>
+    return (
+        <>
 
-    {/*  a default game*/}
-    </>
-  )
+            {/*  a default game*/}
+        </>
+    )
 }

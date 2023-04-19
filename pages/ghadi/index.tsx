@@ -17,7 +17,7 @@ const Ghadi = () => {
                 <main className={"w-full h-full"}>
                     <section
                         className={"main flex flex-col justify-start items-start w-full  overflow-hidden lg:flex-row lg:h-full"}>
-                        <img src={'/ghadi/images/ghadi.svg'} className={'w-full'}/>
+                        <img src={'/ghadi/images/ghadi.svg'} className={'w-full mr-10 mt-5'}/>
                         <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5 lg:w-1/2"}>
 
                             {/*<h3 style={{}}*/}
@@ -29,7 +29,8 @@ const Ghadi = () => {
                             {/*    بــفرســــــــــــــــ</h3>*/}
 
                         </div>
-                        <Carousel/>                        <Chat/>
+                        <Carousel/>
+                        <Chat/>
 
                     </section>
 

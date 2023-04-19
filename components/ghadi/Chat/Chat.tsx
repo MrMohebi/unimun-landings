@@ -83,9 +83,9 @@ const Chat = () => {
     return render ? (
 
         <div
-            className={" w-full h-full shrink-0 flex flex-col justify-center items-start -mt-2 z-30 lg:h-full lg:place-items-start lg:w-1/2 "}>
+            className={" w-full   h-full shrink-0 flex flex-col justify-center items-start -mt-2 z-30 lg:h-full lg:place-items-start lg:w-1/2 lg:fixed lg:left-0 "}>
             <div
-                className={"rounded-[3rem] w-11/12 max-w-lg mx-auto bg-white/80 backdrop-blur relative overflow-hidden h-96  lg:h-2/3"}>
+                className={" fixed aspect-square -translate-x-1/2 left-1/2 bottom-5 rounded-[3rem] w-11/12 max-w-lg mx-auto bg-white/80 backdrop-blur  overflow-hidden  lg:relative lg:-translate-x-0 lg:left-0 lg:h-2/3"}>
                 <div className={"w-full bg-white/70 h-20 flex flex-row items-center justify-start px-3 "}>
                     <img src="/ghadi/images/unimun.png" alt="Unimun" className={"rounded-full w-16 h-16"}/>
                     <div className={"flex flex-col justify-center items-start h-full mr-3 "}>
@@ -263,7 +263,7 @@ const Chat = () => {
                                         className={" w-full h-16 bg-white grid grid-cols-12 place-items-center px-4  left-0 bottom-0 pointer-events-auto"}>
                                 <ButtonBase onClick={() => {
                                     console.log(priceInputRef.current?.value);
-                                    setPrice(priceInputRef.current?.value||'');
+                                    setPrice(priceInputRef.current?.value || '');
 
                                     setPriceTextInput(false);
                                     setUniTyping(true);
