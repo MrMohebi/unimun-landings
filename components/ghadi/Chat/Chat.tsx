@@ -83,7 +83,7 @@ const Chat = () => {
     return render ? (
 
         <div
-            className={" w-full   h-full shrink-0 flex flex-col justify-center items-start -mt-2 z-30 lg:h-full lg:place-items-start lg:w-1/2 lg:fixed lg:left-0 "}>
+            className={" w-full h-full shrink-0 flex flex-col justify-center items-start -mt-2 z-30 lg:h-full lg:place-items-start lg:w-1/2 lg:fixed lg:left-0 "}>
             <div
                 className={" fixed aspect-square -translate-x-1/2 left-1/2 bottom-5 rounded-[3rem] w-11/12 max-w-lg mx-auto bg-white/80 backdrop-blur  overflow-hidden  lg:relative lg:-translate-x-0 lg:left-0 lg:h-2/3"}>
                 <div className={"w-full bg-white/70 h-20 flex flex-row items-center justify-start px-3 "}>

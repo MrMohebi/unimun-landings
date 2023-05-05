@@ -17,7 +17,9 @@ const Ghadi = () => {
                 <main className={"w-full h-full"}>
                     <section
                         className={"main flex flex-col justify-start items-start w-full  overflow-hidden lg:flex-row lg:h-full"}>
-                        <img src={'/ghadi/images/ghadi.svg'} className={'w-full mr-10 mt-5'}/>
+                            {/*<div className={'left-0 bottom-3 bg-white absolute h-8 w-8'}></div>*/}
+                            <img src={'/ghadi/images/ghadi.svg'} className={'min-w-[110vw] mr-5 mt-5'}/>
+
                         <div className={"send-photo flex flex-col justify-start items-start  w-full pr-5 lg:w-1/2"}>
 
                             {/*<h3 style={{}}*/}
@@ -35,7 +37,7 @@ const Ghadi = () => {
                     </section>
 
                     <div
-                        className=" hidden abstract ghadi-masked w-full h-full  -bottom-20 left-0 bg-white/60 backdrop-blur fixed lg:block"/>
+                        className=" hidden abstract ghadi-masked w-full h-full -bottom-20 left-0 bg-white/60 backdrop-blur fixed lg:block"/>
                 </main>
             </div>
         </>
